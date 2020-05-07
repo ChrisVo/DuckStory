@@ -19,7 +19,7 @@ func zoom_out(new_offset, zoom_counter):
 func transition_camera(new_zoom, new_offset):
 	if new_zoom != current_zoom:
 		current_zoom = new_zoom
-		print(current_zoom)
+
 		$Tween.interpolate_property(self, "zoom", get_zoom(), current_zoom, transition_time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.interpolate_property(self, "offset", get_offset(), new_offset, transition_time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.start()
