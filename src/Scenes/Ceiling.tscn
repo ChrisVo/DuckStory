@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 1613.48 )
+
+[node name="Ceiling" type="Area2D"]
+modulate = Color( 0.384314, 0.235294, 0.847059, 1 )
+scale = Vector2( 2.48, 0.633612 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -1367.24 )
+scale = Vector2( 100, 1 )
+shape = SubResource( 1 )

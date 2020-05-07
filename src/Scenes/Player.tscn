@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Sprites/duck.png" type="Texture" id=1]
+[ext_resource path="res://src/Scenes/Player.gd" type="Script" id=2]
+[ext_resource path="res://src/Scenes/Camera2D.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 13.7464, 33.0398 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.278278, 0.0582542 )
+scale = Vector2( 2.42073, -1.24865 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 4.5, 4.5 )
+smoothing_enabled = true
+script = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="Camera2D"]
