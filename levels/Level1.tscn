@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Scenes/Platform.tscn" type="PackedScene" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://src/Scenes/GoalPlatform.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Scenes/Ceiling.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Scenes/Background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Scenes/DropDetector.tscn" type="PackedScene" id=8]
 
-[node name="Level" type="Node2D"]
+[node name="Level1" type="Node2D"]
 position = Vector2( 49.2522, 2151.87 )
 script = ExtResource( 4 )
 
@@ -42,11 +43,12 @@ position = Vector2( 7418.35, -1744.08 )
 scale = Vector2( 3.99518, 1.85621 )
 
 [node name="Wind6" parent="Wind" instance=ExtResource( 3 )]
-position = Vector2( 9142.25, 938.224 )
+position = Vector2( 9644.37, -206.614 )
 scale = Vector2( -5.77098, 5.08402 )
 
 [node name="Wind7" parent="Wind" instance=ExtResource( 3 )]
-position = Vector2( 12104.9, -2763.99 )
+position = Vector2( 12155.3, -2696.81 )
+rotation = 0.00179747
 scale = Vector2( 3.99518, 2.61621 )
 
 [node name="Wind8" parent="Wind" instance=ExtResource( 3 )]
@@ -58,7 +60,7 @@ position = Vector2( 17487, -9289.92 )
 scale = Vector2( 3.99518, 1.83295 )
 
 [node name="Wind11" parent="Wind" instance=ExtResource( 3 )]
-position = Vector2( 19666.3, -6533.54 )
+position = Vector2( 19666.3, -6382.38 )
 scale = Vector2( 3.99518, 1.83295 )
 
 [node name="Wind12" parent="Wind" instance=ExtResource( 3 )]
@@ -85,6 +87,17 @@ scale = Vector2( 25.794, 2.60747 )
 [node name="Ceiling2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 24642.4, -4949 )
 scale = Vector2( 2.65757, 1.21199 )
+
+[node name="Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 19684.7, -5477.16 )
+
+[node name="Platform2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 12166.8, -1437.66 )
+
+[node name="DropDetector" parent="." instance=ExtResource( 8 )]
+position = Vector2( 20282.4, 4327.85 )
+rotation = 0.00179747
+scale = Vector2( 3.99518, 2.61621 )
 [connection signal="body_entered" from="Wind/Wind" to="Player" method="_on_Wind_body_entered"]
 [connection signal="body_exited" from="Wind/Wind" to="Player" method="_on_Wind_body_exited"]
 [connection signal="body_entered" from="Wind/Wind2" to="Player" method="_on_Wind_body_entered"]
@@ -114,6 +127,7 @@ scale = Vector2( 2.65757, 1.21199 )
 [connection signal="body_exited" from="Ceiling" to="Player" method="_on_Ceiling_body_exited"]
 [connection signal="body_entered" from="Ceiling2" to="Player" method="_on_Ceiling_body_entered"]
 [connection signal="body_exited" from="Ceiling2" to="Player" method="_on_Ceiling_body_exited"]
+[connection signal="body_entered" from="DropDetector" to="." method="_on_DropDetector_body_entered"]
 
 [editable path="Player"]
 

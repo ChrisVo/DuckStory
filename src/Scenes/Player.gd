@@ -24,9 +24,10 @@ func get_input():
 		velocity.y = jump_speed
 	if right:
 		velocity.x += run_speed
+		$Sprite.flip_h = true
 	if left:
 		velocity.x -= run_speed
-	
+		$Sprite.flip_h = false
 func _physics_process(delta):
 	get_input()
 	if jumping and is_on_floor():

@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="DuckStory"
-run/main_scene="res://levels/Level1.tscn"
+run/main_scene="res://UI/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -24,6 +24,7 @@ config/icon="res://icon.png"
 window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
+window/size/fullscreen=true
 
 [input]
 
